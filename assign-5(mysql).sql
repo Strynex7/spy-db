@@ -60,7 +60,7 @@ WHERE acc_type = 'Savings'
 UNION
 SELECT acc_no, cid
 FROM Account
-WHERE balance > 40000;
+WHERE balance > 60000;
 
 SELECT acc_no, cid
 FROM Account
@@ -68,15 +68,15 @@ WHERE acc_type = 'Savings'
 INTERSECT
 SELECT acc_no, cid
 FROM Account
-WHERE balance > 40000;
+WHERE balance > 60000;
 
 SELECT acc_no, cid
 FROM Account
 WHERE acc_type = 'Savings'
-MINUS
+EXCEPT
 SELECT acc_no, cid
 FROM Account
-WHERE balance > 40000;
+WHERE balance > 60000;
 
 SELECT Customer.cid, Customer.cname, Account.acc_no, Account.balance
 FROM Customer
